@@ -1,18 +1,23 @@
-set SERVICE_NAME=ScoreMarkerService
 
-set APP_HOME=D:\service
-set PR_INSTALL=%APP_HOME%\prunsrv.exe
+set SERVICE_NAME=ScoreMarkerService
+set APP_NAME=ScoreMarker
+
+
+set APP_DIR=C:\work-env\jar&war\ExamStack
+set APP_HOME=%APP_DIR%\%APP_NAME%
+set PR_INSTALL=%APP_DIR%\prunsrv.exe
+
  
 REM Service log configuration
 set PR_LOGPREFIX=%SERVICE_NAME%
-set PR_LOGPATH=d:\logs
-set PR_STDOUTPUT=d:\logs\stdout.txt
-set PR_STDERROR=d:\logs\stderr.txt
+set PR_LOGPATH=%APP_HOME%\logs
+set PR_STDOUTPUT=%APP_HOME%\logs\stdout.txt
+set PR_STDERROR=%APP_HOME%\logs\stderr.txt
 set PR_LOGLEVEL=Error
 
 REM Path to java installation
 set PR_JVM=%JAVA_HOME%\jre\bin\server\jvm.dll
-set PR_CLASSPATH=%APP_HOME%\ScoreMarker-2.0.0.jar
+set PR_CLASSPATH=%APP_DIR%\ScoreMarker-2.0.0.jar
  
 REM Startup configuration
 set PR_STARTUP=auto

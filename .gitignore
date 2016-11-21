@@ -9,12 +9,5 @@ target
 .idea
 classes
 *.iml
-.idea/
-ExamStack.iml
-classes/
-common/Common.iml
-logs/
-management/Management.iml
-portal/Portal.iml
-scoreMarker/ScoreMarker.iml
-scoreMarker/src/main/java/META-INF/
+logs
+

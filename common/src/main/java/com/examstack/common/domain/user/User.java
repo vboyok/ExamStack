@@ -17,7 +17,13 @@ public class User implements Serializable {
 	private String phoneNum;
 	private Date createTime;
 	private int createBy;
+	/**
+	 * fieldId 知识掌握情况
+	 */
 	private int fieldId;
+	/**
+	 * fieldName 知识掌握情况
+	 */
 	private String fieldName;
 	private Date lastLoginTime;
 	private Date loginTime;

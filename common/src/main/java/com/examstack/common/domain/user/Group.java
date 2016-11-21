@@ -36,5 +36,28 @@ public class Group implements Serializable {
 	public void setGroupName(String groupName) {
 		this.groupName = groupName;
 	}
-	
+
+	//增加树结构
+	private int groupParentId;
+	private String groupTreePath;
+
+	public static long getSerialVersionUID() {
+		return serialVersionUID;
+	}
+
+	public int getGroupParentId() {
+		return groupParentId;
+	}
+
+	public void setGroupParentId(int groupParentId) {
+		this.groupParentId = groupParentId;
+	}
+
+	public String getGroupTreePath() {
+		return groupTreePath;
+	}
+
+	public void setGroupTreePath(String groupTreePath) {
+		this.groupTreePath = groupTreePath;
+	}
 }

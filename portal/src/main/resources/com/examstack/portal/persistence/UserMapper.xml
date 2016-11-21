@@ -60,7 +60,8 @@
 	
 	<!-- group -->
 	<select id="getGroupListByUserId" resultType="com.examstack.common.domain.user.Group">
-		select id groupId,group_name groupName,create_time createTime,is_default defaultt
+		select id groupId,group_name groupName,create_time createTime,is_default defaultt,parent_id groupParentId,tree_path groupTreePath
+
 		from et_group where user_id=#{userId}
 	</select>
 	

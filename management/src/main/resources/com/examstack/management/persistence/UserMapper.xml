@@ -138,14 +138,19 @@
 	
 	<!-- group -->
 	<select id="getGroupListByUserId" resultType="com.examstack.common.domain.user.Group">
-		select id groupId,group_name groupName,create_time createTime,is_default defaultt
+		select id groupId,group_name groupName,create_time createTime,is_default defaultt,parent_id groupParentId,tree_path groupTreePath
 		from et_group where user_id=#{userId} order by id desc
 	</select>
 	<insert id="addGroup" parameterType="com.examstack.common.domain.user.Group">
-		insert into et_group(group_name,user_id,is_default) values (#{group.groupName},#{group.userId},#{group.defaultt})
+		insert into et_group(group_name,user_id,is_default,parent_id,tree_path) values (#{group.groupName},#{group.userId},#{group.defaultt},#{group.groupParentId},#{group.groupTreePath})
 	</insert>
 	<insert id="updateGroup">
-		update et_group set group_name=#{groupName} where id=#{groupId}
+		update et_group
+		set
+		group_name=#{groupName} ,
+		parent_id=#{groupParentId} ,
+		tree_path=#{groupTreePath}
+		where id=#{groupId}
 	</insert>
 	<delete id="deleteGroup">
 		delete from et_group where id=#{group}

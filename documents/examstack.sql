@@ -151,6 +151,8 @@ CREATE TABLE `et_group` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `user_id` int(11) NOT NULL,
   `is_default` tinyint(1) NOT NULL DEFAULT '0',
+  `parent_id` int(11) NOT NULL,
+  `tree_path` varchar(254) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   KEY `idx_group_uid` (`user_id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
@@ -763,7 +765,7 @@ CREATE TABLE `et_user_training_history` (
   `user_id` int(11) NOT NULL COMMENT '用户ID',
   `duration` float(11,4) NOT NULL DEFAULT '0.0000',
   `process` float(11,2) NOT NULL,
-  `start_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `start_time` timestamp NOT NULL DEFAULT '2015-08-06 11:31:34',
   `last_state_time` timestamp NULL DEFAULT NULL,
   `user_training_detail` mediumtext,
   PRIMARY KEY (`section_id`,`user_id`),

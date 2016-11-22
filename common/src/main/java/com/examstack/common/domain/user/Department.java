@@ -23,4 +23,24 @@ public class Department {
 	public void setDepName(String depName) {
 		this.depName = depName;
 	}
+
+	//增加树结构
+	private int depParentId;
+	private String depTreePath;
+
+	public int getDepParentId() {
+		return depParentId;
+	}
+
+	public void setDepParentId(int depParentId) {
+		this.depParentId = depParentId;
+	}
+
+	public String getDepTreePath() {
+		return depTreePath;
+	}
+
+	public void setDepTreePath(String depTreePath) {
+		this.depTreePath = depTreePath;
+	}
 }

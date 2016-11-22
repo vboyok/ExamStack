@@ -27,6 +27,7 @@ request.setAttribute("leftMenuId",list[3]);
 		<meta name="keywords" content="">
 		<link rel="shortcut icon" href="<%=basePath%>resources/images/favicon.ico" />
 		<link href="resources/bootstrap/css/bootstrap-huan.css" rel="stylesheet">
+	    <link rel="stylesheet" href="resources/plugins/treegrid/css/jquery.treegrid.css">
 		<link href="resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 		<link href="resources/css/style.css" rel="stylesheet">
 		
@@ -101,7 +102,8 @@ request.setAttribute("leftMenuId",list[3]);
 										</button>
 									</div>	
 								</div>
-								<table class="table-striped table">
+								<%--<table class="table-striped table">--%>
+								<table class="table tree_dept">
 									<thead>
 										<tr>
 											<td>ID</td>
@@ -112,7 +114,7 @@ request.setAttribute("leftMenuId",list[3]);
 									</thead>
 									<tbody>
 										<c:forEach items="${depList }" var="item">
-											<tr>
+											<tr class="treegrid-${item.depId } treegrid-parent-${item.depParentId }">
 												<td>${item.depId }</td>
 												<td>${item.depName }</td>
 												<td>${item.memo }</td>
@@ -198,6 +200,9 @@ request.setAttribute("leftMenuId",list[3]);
 		<script type="text/javascript" src="resources/js/all.js"></script>
 		<script type="text/javascript" src="resources/js/dep-list.js"></script>
 		<script type="text/javascript" src="resources/js/add-dep.js"></script>
+		<!-- plugins JS -->
+		<script type="text/javascript" src="resources/plugins/treegrid/js/jquery.treegrid.js"></script>
+		<script type="text/javascript" src="resources/plugins/treegrid/js/jquery.treegrid.bootstrap3.js"></script>
 		<script>
 			$(function() {
 				$("#add-dep-modal-btn").click(function() {
@@ -207,6 +212,9 @@ request.setAttribute("leftMenuId",list[3]);
 					});
 	
 				});
+			});
+			$(document).ready(function() {
+				$('.tree_dept').treegrid();
 			});
 		</script>
 	</body>
